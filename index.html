@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApexMedia | Next-Gen Digital Marketing Agency</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Background 3D Glowing Elements -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
 
@@ -25,11 +23,13 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#calculator">ROI Calculator</a></li>
+                <li><a href="#case-studies">Results</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <a href="#contact" class="btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#audit" class="btn-primary">Free Audit <i class="fa-solid fa-arrow-right"></i></a>
     </header>
 
     <!-- Hero Section -->
@@ -40,7 +40,7 @@
             <p>Data-driven performance marketing, SEO mastery, and high-converting creative strategies designed to dominate your market.</p>
             
             <div class="hero-btns">
-                <a href="#contact" class="btn-primary btn-large">Launch Campaign</a>
+                <a href="#calculator" class="btn-primary btn-large">Calculate ROI</a>
                 <a href="https://wa.me/919876543210" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
             </div>
 
@@ -62,7 +62,19 @@
         </div>
     </section>
 
-    <!-- Services Section (3D Card Tilt Look) -->
+    <!-- FEATURE 3: Social Proof / Client Logos -->
+    <section class="social-proof">
+        <p class="trust-title">TRUSTED BY 50+ INDUSTRY LEADERS</p>
+        <div class="logos-grid">
+            <div class="logo-item"><i class="fa-brands fa-shopify"></i> Shopify</div>
+            <div class="logo-item"><i class="fa-brands fa-google"></i> Partner</div>
+            <div class="logo-item"><i class="fa-brands fa-meta"></i> Meta Verified</div>
+            <div class="logo-item"><i class="fa-brands fa-amazon"></i> Ads Pro</div>
+            <div class="logo-item"><i class="fa-brands fa-stripe"></i> Stripe</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="section-header">
             <h2>Our High-Impact <span class="gradient-text">Services</span></h2>
@@ -73,49 +85,183 @@
             <div class="glass-card">
                 <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
                 <h3>Performance Marketing</h3>
-                <p>Laser-targeted Paid Ads (Meta, Google, TikTok) optimized for maximum return on ad spend.</p>
+                <p>Laser-targeted Paid Ads (Meta, Google, TikTok) optimized for maximum ROAS.</p>
             </div>
-
             <div class="glass-card">
                 <div class="card-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
                 <h3>SEO & Organic Growth</h3>
-                <p>Dominate search engines and attract organic traffic with cutting-edge SEO tactics.</p>
+                <p>Dominate search engines and attract high-converting organic traffic.</p>
             </div>
-
             <div class="glass-card">
                 <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                 <h3>Content & Branding</h3>
-                <p>High-converting visual design, video ads, and storytelling that turns viewers into loyal customers.</p>
+                <p>High-converting visual design, video ads, and storytelling that turns viewers into buyers.</p>
             </div>
-
             <div class="glass-card">
                 <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
                 <h3>Conversion Funnels</h3>
-                <p>Custom 3D landing pages & automated marketing funnels that multiply your leads instantly.</p>
+                <p>Custom landing pages & automated marketing funnels that multiply your leads instantly.</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="glass-container">
-            <div class="about-text">
-                <h2>Why Choose <span class="gradient-text">ApexMedia?</span></h2>
-                <p>We don't just run ads; we build scalable growth engines. Our team leverages futuristic analytics, AI-driven targeting, and creative storytelling to give your business an unfair advantage.</p>
-                <ul class="about-list">
-                    <li><i class="fa-solid fa-check-circle"></i> ROI-First Strategy & Transparency</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Custom AI Marketing Automation</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Dedicated Growth Specialists</li>
+    <!-- FEATURE 1: 3D ROI Calculator -->
+    <section id="calculator" class="calculator-section">
+        <div class="glass-container calc-card">
+            <div class="section-header">
+                <h2>Interactive <span class="gradient-text">ROI Calculator</span></h2>
+                <p>Estimate your potential monthly revenue growth with ApexMedia.</p>
+            </div>
+
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <label for="adBudget">Monthly Ad Budget ($): <span id="budgetValue">$5,000</span></label>
+                    <input type="range" id="adBudget" min="1000" max="50000" step="1000" value="5000">
+
+                    <label for="industrySelect">Select Your Industry:</label>
+                    <select id="industrySelect" class="styled-select">
+                        <option value="ecommerce">E-Commerce & Retail</option>
+                        <option value="saas">SaaS & B2B Software</option>
+                        <option value="services">Local Business & Services</option>
+                    </select>
+                </div>
+
+                <div class="calc-results glass-card">
+                    <h3>Estimated Revenue</h3>
+                    <div class="roi-number" id="estimatedRevenue">$20,000</div>
+                    <p class="roi-subtitle">Est. ROAS: <span id="roasMultiple">4.0x</span></p>
+                    <a href="#contact" class="btn-primary btn-full margin-top">Claim This Growth</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE 2: Case Studies / Results Board -->
+    <section id="case-studies" class="case-studies">
+        <div class="section-header">
+            <h2>Real Results, <span class="gradient-text">Proven Growth</span></h2>
+            <p>Here is what we delivered for our previous clients.</p>
+        </div>
+
+        <div class="results-grid">
+            <div class="glass-card result-card">
+                <div class="case-badge">E-Commerce</div>
+                <h3>UrbanGlow Fashion</h3>
+                <div class="result-stats">
+                    <div>
+                        <h4>350%</h4>
+                        <p>Revenue Growth</p>
+                    </div>
+                    <div>
+                        <h4>5.2x</h4>
+                        <p>Meta ROAS</p>
+                    </div>
+                </div>
+                <p>Scaled monthly sales from $15k to $68k in under 90 days using TikTok & IG Reels Ads.</p>
+            </div>
+
+            <div class="glass-card result-card">
+                <div class="case-badge">B2B SaaS</div>
+                <h3>FlowTech Software</h3>
+                <div class="result-stats">
+                    <div>
+                        <h4>420+</h4>
+                        <p>Qualified Leads</p>
+                    </div>
+                    <div>
+                        <h4>-45%</h4>
+                        <p>Lower CPA</p>
+                    </div>
+                </div>
+                <p>Restructured Google Search Ads and built high-converting 3D landing pages.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE 5: Free Audit Tool -->
+    <section id="audit" class="audit-section">
+        <div class="glass-container audit-card">
+            <h2>Get A <span class="gradient-text">Free Marketing Audit</span></h2>
+            <p>Enter your website URL and get a detailed video teardown of your ad & SEO strategy from our experts.</p>
+            
+            <form id="auditForm" class="audit-form">
+                <input type="url" id="auditUrl" placeholder="Enter your website URL (e.g. https://yourbrand.com)" required>
+                <input type="email" id="auditEmail" placeholder="Your Email Address" required>
+                <button type="submit" class="btn-primary">Get Free Audit <i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <p id="auditResponseMsg"></p>
+        </div>
+    </section>
+
+    <!-- FEATURE 4: Video / Text Testimonials Grid -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What Clients <span class="gradient-text">Say About Us</span></h2>
+            <p>Trusted by founders, marketers, and business owners worldwide.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="glass-card test-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"ApexMedia completely changed our marketing strategy. Our ROAS jumped from 1.8x to 4.5x within two months!"</p>
+                <div class="client-info">
+                    <strong>David Miller</strong>
+                    <span>CEO, E-Com Brand</span>
+                </div>
+            </div>
+
+            <div class="glass-card test-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Their 3D funnels and ad creatives stand out from everything else in our market. Highly recommended!"</p>
+                <div class="client-info">
+                    <strong>Sarah Jenkins</strong>
+                    <span>Founder, HealthCo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE 6: Pricing Plans -->
+    <section id="pricing" class="pricing">
+        <div class="section-header">
+            <h2>Flexible <span class="gradient-text">Pricing Plans</span></h2>
+            <p>Transparent packages tailored for every growth stage.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="glass-card price-card">
+                <h3>Starter Growth</h3>
+                <div class="price">$1,499 <span>/month</span></div>
+                <p>Perfect for small businesses looking to scale paid ads.</p>
+                <ul class="price-features">
+                    <li><i class="fa-solid fa-check"></i> Meta & Google Ads Management</li>
+                    <li><i class="fa-solid fa-check"></i> Monthly Analytics Report</li>
+                    <li><i class="fa-solid fa-check"></i> Up to $10k Ad Spend</li>
                 </ul>
+                <a href="#contact" class="btn-primary btn-full margin-top">Select Starter</a>
+            </div>
+
+            <div class="glass-card price-card featured-card">
+                <div class="popular-tag">MOST POPULAR</div>
+                <h3>Scale & Dominate</h3>
+                <div class="price">$2,999 <span>/month</span></div>
+                <p>Full-funnel growth engine for aggressive scaling.</p>
+                <ul class="price-features">
+                    <li><i class="fa-solid fa-check"></i> Meta, Google & TikTok Ads</li>
+                    <li><i class="fa-solid fa-check"></i> Full SEO & Content Strategy</li>
+                    <li><i class="fa-solid fa-check"></i> High-Converting Landing Page</li>
+                    <li><i class="fa-solid fa-check"></i> Dedicated Slack Channel</li>
+                </ul>
+                <a href="#contact" class="btn-primary btn-full margin-top">Select Scale</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="glass-card contact-card">
             <h2>Ready To <span class="gradient-text">Dominate Your Market?</span></h2>
-            <p>Fill out the form below to claim your free 30-minute growth strategy session.</p>
+            <p>Fill out the form below to claim your free strategy session.</p>
 
             <form id="contactForm">
                 <div class="input-group">
@@ -127,13 +273,12 @@
                 <div class="input-group">
                     <textarea id="message" rows="4" placeholder="Tell us about your business goals..." required></textarea>
                 </div>
-                <button type="submit" class="btn-primary btn-full">Submit Strategy Request <i class="fa-solid fa-paper-plane"></i></button>
+                <button type="submit" class="btn-primary btn-full">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
             </form>
             <p id="responseMsg"></p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 ApexMedia Agency. All Rights Reserved.</p>
     </footer>
