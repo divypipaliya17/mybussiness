@@ -6,28 +6,27 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const message = document.getElementById('message').value;
     const responseMsg = document.getElementById('responseMsg');
 
-    responseMsg.style.color = "blue";
-    responseMsg.innerText = "મોકલી રહ્યું છે...";
+    responseMsg.style.color = "#06b6d4";
+    responseMsg.innerText = "Sending your request...";
 
     try {
-        // Python બેકએન્ડ API ની લિંક અહીં ઉમેરવી
-        const response = await fetch('https://my-python-backend-cnsd.onrender.com/api/contact', {
+        // Replace with your Render Python Backend API URL
+        const response = await fetch('https://my-python-backend.onrender.com/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, message })
         });
 
-        const data = await response.json();
         if (response.ok) {
-            responseMsg.style.color = "green";
-            responseMsg.innerText = "આભાર! તમારો સંદેશ મળી ગયો છે.";
+            responseMsg.style.color = "#22c55e";
+            responseMsg.innerText = "Thank you! Your strategy session request has been received.";
             document.getElementById('contactForm').reset();
         } else {
-            responseMsg.style.color = "red";
-            responseMsg.innerText = "કંઈક ભૂલ થઈ, ફરી પ્રયાસ કરો.";
+            responseMsg.style.color = "#ef4444";
+            responseMsg.innerText = "Something went wrong. Please try again.";
         }
     } catch (error) {
-        responseMsg.style.color = "red";
-        responseMsg.innerText = "સર્વર સાથે કનેક્ટ નથી થઈ શક્યું.";
+        responseMsg.style.color = "#ef4444";
+        responseMsg.innerText = "Unable to connect to the server.";
     }
 });
