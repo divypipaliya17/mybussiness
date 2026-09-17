@@ -1,80 +1,141 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>મારા બિઝનેસની વેબસાઇટ</title>
+    <title>ApexMedia | Next-Gen Digital Marketing Agency</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="logo">મારો બિઝનેસ</div>
+    <!-- Background 3D Glowing Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Glassmorphism Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+            Apex<span class="highlight">Media</span>
+        </div>
         <nav>
-            <ul>
-                <li><a href="#home">હોમ</a></li>
-                <li><a href="#about">અમારા વિશે</a></li>
-                <li><a href="#services">સેવાઓ</a></li>
-                <li><a href="#contact">સંપર્ક કરો</a></li>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <a href="#contact" class="btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>તમારા બિઝનેસ માટે શ્રેષ્ઠ સોલ્યુશન</h1>
-        <p>અમે ઉત્તમ ક્વોલિટી અને વિશ્વસનીય સેવાઓ પૂરી પાડીએ છીએ.</p>
-        <a href="https://wa.me/919876543210" class="btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i> વૉટ્સએપ પર વાત કરો
-        </a>
+        <div class="hero-content">
+            <div class="badge"><i class="fa-solid fa-chart-line"></i> Scale Your Revenue Fast</div>
+            <h1>We Scale Brands With <span class="gradient-text">3D Digital Marketing</span></h1>
+            <p>Data-driven performance marketing, SEO mastery, and high-converting creative strategies designed to dominate your market.</p>
+            
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary btn-large">Launch Campaign</a>
+                <a href="https://wa.me/919876543210" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h2>$10M+</h2>
+                    <p>Ad Spend Managed</p>
+                </div>
+                <div class="stat-card">
+                    <h2>4.8x</h2>
+                    <p>Average ROAS</p>
+                </div>
+                <div class="stat-card">
+                    <h2>250+</h2>
+                    <p>Global Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (3D Card Tilt Look) -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our High-Impact <span class="gradient-text">Services</span></h2>
+            <p>Engineered to drive maximum engagement and ROI for modern businesses.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Performance Marketing</h3>
+                <p>Laser-targeted Paid Ads (Meta, Google, TikTok) optimized for maximum return on ad spend.</p>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <h3>SEO & Organic Growth</h3>
+                <p>Dominate search engines and attract organic traffic with cutting-edge SEO tactics.</p>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Content & Branding</h3>
+                <p>High-converting visual design, video ads, and storytelling that turns viewers into loyal customers.</p>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                <h3>Conversion Funnels</h3>
+                <p>Custom 3D landing pages & automated marketing funnels that multiply your leads instantly.</p>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2>અમારા વિશે</h2>
-        <p>અમારી કંપની ગ્રાહકોને શ્રેષ્ઠ ક્વોલિટીની પ્રોડક્ટ્સ અને સર્વિસ પૂરી પાડવા માટે કટિબદ્ધ છે. અમે છેલ્લાં ઘણાં વર્ષોથી આ ક્ષેત્રમાં કામ કરી રહ્યા છીએ.</p>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>અમારી સેવાઓ</h2>
-        <div class="service-container">
-            <div class="service-card">
-                <i class="fas fa-briefcase"></i>
-                <h3>બિઝનેસ કન્સલ્ટિંગ</h3>
-                <p>તમારા બિઝનેસને આગળ વધારવા માટે યોગ્ય માર્ગદર્શન.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-cogs"></i>
-                <h3>પ્રીમિયમ સર્વિસ</h3>
-                <p>ગ્રાહકની જરૂરિયાત મુજબ કસ્ટમ સોલ્યુશન્સ.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-headset"></i>
-                <h3>૨૪/૭ સપોર્ટ</h3>
-                <p>કોઈપણ સમસ્યા માટે સદા તમારી સેવામાં.</p>
+        <div class="glass-container">
+            <div class="about-text">
+                <h2>Why Choose <span class="gradient-text">ApexMedia?</span></h2>
+                <p>We don't just run ads; we build scalable growth engines. Our team leverages futuristic analytics, AI-driven targeting, and creative storytelling to give your business an unfair advantage.</p>
+                <ul class="about-list">
+                    <li><i class="fa-solid fa-check-circle"></i> ROI-First Strategy & Transparency</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Custom AI Marketing Automation</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Dedicated Growth Specialists</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Contact Form Section -->
     <section id="contact" class="contact">
-        <h2>સંપર્ક કરો</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="તમારું નામ" required>
-            <input type="email" id="email" placeholder="તમારું ઇમેઇલ" required>
-            <textarea id="message" placeholder="તમારો સંદેશ" rows="5" required></textarea>
-            <button type="submit">સંદેશ મોકલો</button>
-        </form>
-        <p id="responseMsg"></p>
+        <div class="glass-card contact-card">
+            <h2>Ready To <span class="gradient-text">Dominate Your Market?</span></h2>
+            <p>Fill out the form below to claim your free 30-minute growth strategy session.</p>
+
+            <form id="contactForm">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Business Email" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" rows="4" placeholder="Tell us about your business goals..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-full">Submit Strategy Request <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <p id="responseMsg"></p>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 મારો બિઝનેસ. તમામ હકો અનામત છે.</p>
+        <p>&copy; 2026 ApexMedia Agency. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
