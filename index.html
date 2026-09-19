@@ -10,194 +10,193 @@
 </head>
 <body>
 
-    <!-- 1. LOGIN SCREEN -->
+    <!-- LOGIN SCREEN -->
     <div id="loginScreen" class="login-overlay">
         <div class="login-card">
             <div class="brand-logo">
                 <i class="fa-solid fa-bolt"></i> <span>AdFlux</span>
             </div>
             <h2>Welcome Back!</h2>
-            <p>Enter your credentials to access your marketing dashboard.</p>
+            <p>Enter your credentials to access marketing dashboard.</p>
             <form id="loginForm">
                 <div class="input-box">
                     <label>Email Address</label>
-                    <input type="email" id="loginEmail" placeholder="admin@adflux.com" required>
+                    <input type="email" value="admin@adflux.com" required>
                 </div>
                 <div class="input-box">
                     <label>Password</label>
-                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    <input type="password" value="123456" required>
                 </div>
                 <button type="submit" class="btn-purple-full">Sign In to Dashboard</button>
             </form>
         </div>
     </div>
 
-    <!-- 2. MAIN DASHBOARD APP -->
+    <!-- MAIN DASHBOARD -->
     <div class="app-container" id="dashboardApp">
-        <!-- Sidebar Navigation -->
+        
+        <!-- PERFECT SIDEBAR MENU (Fixed Width) -->
         <aside class="sidebar">
             <div class="sidebar-logo">
                 <i class="fa-solid fa-bolt"></i>
+                <span>AdFlux</span>
             </div>
             <nav class="sidebar-menu">
-                <a href="#" class="active" title="Dashboard"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
-                <a href="#" title="Campaigns"><i class="fa-solid fa-bullhorn"></i> Campaigns</a>
-                <a href="#" title="Leads & Sales"><i class="fa-solid fa-users"></i> Leads</a>
-                <a href="#" title="Analytics"><i class="fa-solid fa-chart-line"></i> Analytics</a>
-                <a href="#" title="Posts"><i class="fa-solid fa-newspaper"></i> Posts</a>
-                <a href="#" title="Settings"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="#" class="menu-item active"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-bullhorn"></i> <span>Campaigns</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-users"></i> <span>Leads</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-chart-line"></i> <span>Analytics</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-newspaper"></i> <span>Posts</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-gear"></i> <span>Settings</span></a>
             </nav>
             <div class="sidebar-logout">
-                <button id="logoutBtn" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></button>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
+        <!-- MAIN CONTENT -->
         <main class="main-content">
-            <!-- Top Header -->
+            <!-- Header -->
             <header class="top-header">
                 <div class="search-bar">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="Search campaigns, posts, or leads...">
                 </div>
                 <div class="header-actions">
-                    <button class="btn-purple"><i class="fa-solid fa-plus"></i> Create Campaign</button>
+                    <button class="btn-admin-toggle" id="toggleAdminBtn"><i class="fa-solid fa-pen-to-square"></i> Admin Edit Mode</button>
+                    <button class="btn-purple" id="createCampaignBtn"><i class="fa-solid fa-plus"></i> + Create Campaign</button>
                     <div class="user-profile">
-                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=6c5ce7&color=fff" alt="User Avatar">
+                        <span class="avatar-text">AU</span>
                     </div>
                 </div>
             </header>
 
-            <!-- Breadcrumbs & Dashboard Title -->
+            <!-- Title & Breadcrumbs -->
             <div class="dashboard-head">
-                <div class="breadcrumbs">
-                    <span>Campaigns</span> &gt; <span>Overview</span> &gt; <strong>Marketing Strategy</strong>
-                </div>
+                <div class="breadcrumbs">Campaigns &gt; Overview &gt; <strong>Marketing Strategy</strong></div>
                 <div class="title-row">
                     <div>
                         <h1>Marketing Strategy <span class="badge-active">Active</span></h1>
                         <p class="subtitle">Create, manage, and track posts activity for your campaign all in one place.</p>
                     </div>
-                    <button class="btn-outline"><i class="fa-solid fa-plus"></i> Create post</button>
+                    <button class="btn-outline" id="createPostBtn"><i class="fa-solid fa-plus"></i> + Create post</button>
                 </div>
             </div>
 
-            <!-- Tab Filters -->
+            <!-- CLICKABLE WORKING TABS -->
             <div class="filter-bar">
                 <div class="tabs">
-                    <button class="tab-btn active">Overview</button>
-                    <button class="tab-btn">Posts</button>
-                    <button class="tab-btn">Performance</button>
-                    <button class="tab-btn">Settings</button>
+                    <button class="tab-btn active" data-tab="tab-overview">Overview</button>
+                    <button class="tab-btn" data-tab="tab-posts">Posts</button>
+                    <button class="tab-btn" data-tab="tab-performance">Performance</button>
+                    <button class="tab-btn" data-tab="tab-settings">Settings</button>
                 </div>
                 <div class="dropdown-filters">
-                    <select>
-                        <option>Channel: Instagram</option>
-                        <option>Channel: Meta Ads</option>
-                        <option>Channel: Google Ads</option>
-                    </select>
-                    <select>
-                        <option>Goals: All</option>
-                        <option>Lead Gen</option>
-                        <option>Sales</option>
-                    </select>
-                    <select>
-                        <option>Last 30 days</option>
-                        <option>Last 7 days</option>
-                        <option>This Month</option>
-                    </select>
+                    <select><option>Channel: Instagram</option><option>Channel: Facebook</option></select>
+                    <select><option>Goals: All</option></select>
+                    <select><option>Last 30 days</option></select>
                 </div>
             </div>
 
-            <!-- Metrics Cards -->
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-title">Lead generation <span class="growth positive"><i class="fa-solid fa-arrow-up"></i> 25%</span></div>
-                    <div class="metric-value">2,245</div>
-                    <div class="metric-sub">from 1,883 last 30 days</div>
+            <!-- TAB 1: OVERVIEW -->
+            <div id="tab-overview" class="tab-content active">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">Lead generation <span class="growth positive">↑ 25%</span></div>
+                        <div class="metric-value" contenteditable="false" id="leadVal">2,245</div>
+                        <div class="metric-sub">from 1,883 last 30 days</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Sales Conversion <span class="growth negative">↓ 12%</span></div>
+                        <div class="metric-value" contenteditable="false" id="salesVal">393</div>
+                        <div class="metric-sub">from 383 last 30 days</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Engagement <span class="growth positive">↑ 87%</span></div>
+                        <div class="metric-value" contenteditable="false" id="engVal">9,026</div>
+                        <div class="metric-sub">from 2,012 last 30 days</div>
+                    </div>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-title">Sales Conversion <span class="growth negative"><i class="fa-solid fa-arrow-down"></i> 12%</span></div>
-                    <div class="metric-value">393</div>
-                    <div class="metric-sub">from 383 last 30 days</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-title">Engagement <span class="growth positive"><i class="fa-solid fa-arrow-up"></i> 87%</span></div>
-                    <div class="metric-value">9,026</div>
-                    <div class="metric-sub">from 2,012 last 30 days</div>
-                </div>
-            </div>
 
-            <!-- Analytics / Charts Section -->
-            <div class="analytics-row">
-                <div class="chart-box audience-box">
-                    <h3>Audience</h3>
-                    <div class="donut-chart">
-                        <div class="chart-circle"></div>
+                <div class="analytics-row">
+                    <div class="chart-box audience-box">
+                        <h3>Audience</h3>
+                        <div class="donut-chart"><div class="chart-circle"></div></div>
+                        <div class="legend">
+                            <span><i class="dot male"></i> Male</span>
+                            <span><i class="dot female"></i> Female</span>
+                            <span><i class="dot unspecified"></i> Unspecified</span>
+                        </div>
                     </div>
-                    <div class="legend">
-                        <span><i class="dot male"></i> Male</span>
-                        <span><i class="dot female"></i> Female</span>
-                        <span><i class="dot unspecified"></i> Unspecified</span>
-                    </div>
-                </div>
-                <div class="chart-box performance-box">
-                    <h3>Performance</h3>
-                    <div class="line-graph-placeholder">
-                        <div class="wave wave1"></div>
-                        <div class="wave wave2"></div>
+                    <div class="chart-box performance-box">
+                        <h3>Performance Graph</h3>
+                        <div class="graph-placeholder">
+                            <div class="graph-bar" style="height: 40%"></div>
+                            <div class="graph-bar" style="height: 70%"></div>
+                            <div class="graph-bar" style="height: 55%"></div>
+                            <div class="graph-bar" style="height: 85%"></div>
+                            <div class="graph-bar" style="height: 60%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Recent Posts Table -->
-            <div class="table-container">
-                <div class="table-header">
-                    <div>
-                        <h3>Recent posts</h3>
-                        <p>View key metrics for active campaigns.</p>
+            <!-- TAB 2: POSTS TABLE -->
+            <div id="tab-posts" class="tab-content">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Recent Posts</h3>
+                        <p>View & edit active marketing campaigns</p>
                     </div>
-                    <a href="#" class="view-link">View posts</a>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Post Title</th>
+                                <th>Audience Reached</th>
+                                <th>CTR</th>
+                                <th>CPL</th>
+                                <th>Budget</th>
+                                <th>Manager</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td contenteditable="false">Growth Hack: The Secret to Boosting Engagement</td>
+                                <td contenteditable="false">120,040</td>
+                                <td contenteditable="false">2.5%</td>
+                                <td contenteditable="false">$2.80</td>
+                                <td contenteditable="false">$100/day</td>
+                                <td contenteditable="false">Louis Jensen</td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="false">Unlock Exclusive Deals - Limited Time Only!</td>
+                                <td contenteditable="false">68,000</td>
+                                <td contenteditable="false">3.8%</td>
+                                <td contenteditable="false">$1.50</td>
+                                <td contenteditable="false">$80/day</td>
+                                <td contenteditable="false">Louis Jensen</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Post</th>
-                            <th>Audience reached</th>
-                            <th>CTR</th>
-                            <th>CPL</th>
-                            <th>Budget</th>
-                            <th>Manager</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Growth Hack: The Secret to Boosting Engagement</td>
-                            <td>120,040</td>
-                            <td>2.5%</td>
-                            <td>$2.80</td>
-                            <td>$100/day</td>
-                            <td>Louis Jensen</td>
-                        </tr>
-                        <tr>
-                            <td>Unlock Exclusive Deals - Limited Time Only!</td>
-                            <td>68,000</td>
-                            <td>3.8%</td>
-                            <td>$1.50</td>
-                            <td>$80/day</td>
-                            <td>Louis Jensen</td>
-                        </tr>
-                        <tr>
-                            <td>Giveaway Time! Tag a Friend & Win Big</td>
-                            <td>85,000</td>
-                            <td>2.2%</td>
-                            <td>$3.10</td>
-                            <td>$90/day</td>
-                            <td>Louis Jensen</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
+
+            <!-- TAB 3: PERFORMANCE -->
+            <div id="tab-performance" class="tab-content">
+                <div class="chart-box">
+                    <h3>Detailed Performance Analytics</h3>
+                    <p style="color:#808191; margin-top:10px;">Campaign ROAS andconversion funnels are operating at 4.2x efficiency.</p>
+                </div>
+            </div>
+
+            <!-- TAB 4: SETTINGS -->
+            <div id="tab-settings" class="tab-content">
+                <div class="chart-box">
+                    <h3>Admin Settings</h3>
+                    <p style="color:#808191; margin-top:10px;">Configure API keys, webhooks, and team access roles.</p>
+                </div>
+            </div>
+
         </main>
     </div>
 
